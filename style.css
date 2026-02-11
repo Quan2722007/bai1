@@ -1,0 +1,258 @@
+html {
+    font-family: "Poppins";
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 32px 0;
+    font-size: 16px;
+    background-color: rgba(182, 181, 182, 0.208);
+}
+.section {
+    display: flex;
+    gap: 45px;
+    max-width: 1200px;
+    width: 95%;
+    height: auto;
+    padding: 20px 0;
+    align-items: center;
+}
+.number {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(254, 207, 254, 0.356);
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
+    font-weight: 700;
+}
+.section .boxMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 50px);
+    background-color: #ffffff;
+    border-radius: 12px;
+    height: auto;
+    padding: 9px 0;
+    gap: 50px;
+    transition: 0.25s ease;
+    overflow: hidden;
+}
+.section .boxMenu .itemNav {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgba(220, 220, 220, 0.503);
+}
+
+.section .boxMenu .itemNav .item {
+    width: 20px;
+    height: 20px;
+}
+.section .boxMenu .wrapItem {
+    position: relative;
+    display: flex;
+    gap: 35px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    z-index: 1;
+}
+.section .boxMenu .wrapItem .letter1 {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 16px;
+    position: relative;
+}
+.section .boxMenu .wrapItem .letter1.active {
+    background-color: transparent;
+    color: #4a93e2;
+}
+.indicator {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 40px;
+    background-color: #f1f3f8;
+    border-radius: 25px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: -1;
+}
+.section:nth-child(2) .indicator {
+    background-color: #234bff;
+}
+.section:nth-child(2) .letter1.active {
+    color: #ffffff;
+}
+.section .boxMenu .wrapItem .letter2.active {
+    color: white;
+}
+.section .boxMenu .wrapItem .letter3.active {
+    background-color: white;
+    color: #4a93e2;
+}
+.section:nth-child(3) .indicator {
+    width: 7px;
+    height: 7px;
+    background-color: #234bff;
+    bottom: -7px;
+    top: auto;
+    transform: translateX(0);
+    border-radius: 50%;
+}
+.section .boxMenu .wrapItem .letter4 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #fff;
+    color: black;
+}
+.section .boxMenu .wrapItem .letter4 svg {
+    width: 24px;
+    height: 24px;
+}
+.letter5,
+.letter6,
+.letter7,
+.letter8 {
+    display: flex;
+    gap: 6px;
+    background-color: transparent;
+    color: black;
+}
+.letter5 svg,
+.letter6 svg,
+.letter7 svg,
+.letter8 svg {
+    width: 24px;
+    height: 24px;
+}
+.section .boxMenu .wrapItem .letter5.active {
+    border-radius: 5px;
+}
+.section .boxMenu .wrapItem.wrapItemChange {
+    background-color: rgb(228, 228, 228);
+    padding: 10px 20px;
+    border-radius: 12px;
+}
+.section .boxMenu .wrapItem .letter7.active {
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 2px 6px 4px 1px rgba(0, 0, 0, 0.271);
+}
+.section .boxMenu .wrapItem.wrapItemChange2 {
+    background-color: rgb(228, 228, 228);
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    padding-top: 12px;
+    display: flex;
+    justify-content: center;
+}
+.section .boxMenu .wrapItem .letter8.active {
+    border-radius: 8px 8px 0 0;
+    background-color: white;
+}
+.boxMenu.boxChange {
+    padding: 0 0 12px 0;
+    width: 100%;
+}
+.letter1 {
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    z-index: 1;
+}
+.letter1::after {
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    left: 50%;
+}
+.letter1.active::after {
+    transform: translateX(-50%) scaleX(1);
+}
+.letter7.active,
+.letter8.active {
+    animation: slideTab 0.3s ease-out;
+}
+@keyframes slideTab {
+    from {
+        transform: translateY(5px);
+        opacity: 0.7;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.letter1 svg path,
+.letter1 svg rect {
+    transition: color 0.3s ease;
+}
+.section:nth-child(4) .indicator {
+    height: 6px;
+    background-color: #234bff;
+    bottom: -10px;
+    top: auto;
+    transform: none;
+    border-radius: 10px;
+}
+.section:nth-child(6) .indicator {
+    height: 8px;
+    background-color: #234bff;
+    bottom: -12px;
+    top: auto;
+    transform: none;
+    border-radius: 20px;
+}
+
+.section:nth-child(7) .wrapItemChange {
+    background-color: #f1f1f1;
+    padding: 5px;
+    gap: 35px;
+}
+
+.section:nth-child(7) .indicator {
+    height: calc(100% - 10px);
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    top: 5px;
+    transform: none;
+}
+
+.section:nth-child(7) .letter1.active {
+    color: #000;
+}
+.section:nth-child(8) .wrapItemChange2 {
+    background-color: #f1f1f1;
+    padding-bottom: 0;
+    gap: 35px;
+}
+.section:nth-child(8) .indicator {
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 8px 8px 0 0;
+    top: 0;
+    transform: none;
+}
+.section:nth-child(5) .indicator {
+    border-radius: 5px;
+}
