@@ -1,6 +1,5 @@
 const boxMenu = document.querySelectorAll(".boxMenu");
 boxMenu.forEach((boxMenus) => {
-    const wrapItem = boxMenus.querySelector(".wrapItem");
     const items = boxMenus.querySelectorAll(".letter1");
     const indicator = boxMenus.querySelector(".indicator");
     function moveIndicator(element) {
@@ -9,13 +8,9 @@ boxMenu.forEach((boxMenus) => {
         if (sectionNum === "3") {
             indicator.style.width = `7px`;
             indicator.style.left = `${element.offsetLeft + element.offsetWidth / 2 - 3.5}px`;
-        }
-        // Section 7 & 8 thường có gap hoặc padding khác biệt
-        else {
+        } else {
             indicator.style.width = `${element.offsetWidth}px`;
             indicator.style.left = `${element.offsetLeft}px`;
-
-            // Nếu là section 7, 8 có thể cần chỉnh chiều cao linh hoạt
             if (sectionNum === "7" || sectionNum === "8") {
                 indicator.style.height = `${element.offsetHeight}px`;
                 indicator.style.top = `${element.offsetTop}px`;
